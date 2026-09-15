@@ -14,9 +14,74 @@ const highlights = [
   "সাম্প্রতিক তথ্য দ্বারা হালনাগাদকৃত",
 ];
 
+const examCategories = [
+  "বিসিএস প্রিলিমিনারি পরীক্ষা",
+  "বিসিএস লিখিত পরীক্ষা",
+  "বিজেএস (বিচার বিভাগীয় চাকরি)",
+  "নন-ক্যাডার নিয়োগ পরীক্ষা",
+  "প্রাথমিক শিক্ষক নিয়োগ পরীক্ষা",
+  "শিক্ষক নিবন্ধন পরীক্ষা",
+  "বিশ্ববিদ্যালয় ভর্তি পরীক্ষা",
+  "ব্যাংক নিয়োগ পরীক্ষা",
+  "বিভিন্ন মন্ত্রণালয়ের নিয়োগ পরীক্ষা",
+];
+
+const faqs = [
+  {
+    q: "চাকরির জন্য বাংলা প্রস্তুতির জন্য কেন “বাংলা জয়যাত্রা” বইটি পড়া উচিত?",
+    a: "“বাংলা জয়যাত্রা” বইটি চাকরির পরীক্ষার বাংলা অংশের জন্য সহজবোধ্য ভাষায়, সুশৃঙ্খলভাবে ও সাম্প্রতিক তথ্য দিয়ে সাজানো। বিসিএস, বিজেএস, নন-ক্যাডার, প্রাথমিক শিক্ষক নিয়োগ, শিক্ষক নিবন্ধন, বিশ্ববিদ্যালয় ভর্তি, ব্যাংক ও বিভিন্ন মন্ত্রণালয়ের নিয়োগ পরীক্ষা — সব ধরনের চাকরির পরীক্ষার বাংলা প্রস্তুতির জন্য এটি উপযোগী।",
+  },
+  {
+    q: "বিসিএস প্রিলিমিনারি ও লিখিত পরীক্ষার জন্য বাংলা প্রস্তুতি কীভাবে নেব?",
+    a: "বিসিএস প্রিলিমিনারি ও লিখিত — উভয় পরীক্ষার বাংলা অংশের জন্য গুরুত্বপূর্ণ তথ্য, বিশ্লেষণ ও মডেল উপস্থাপনা নিয়ে “বাংলা জয়যাত্রা” বইটি রচিত হয়েছে, যা ধাপে ধাপে প্রস্তুতিতে সহায়ক।",
+  },
+  {
+    q: "এই বই কি ব্যাংক নিয়োগ ও শিক্ষক নিবন্ধন পরীক্ষার জন্যও উপযোগী?",
+    a: "হ্যাঁ। ব্যাংক নিয়োগ পরীক্ষা, প্রাথমিক শিক্ষক নিয়োগ, শিক্ষক নিবন্ধন পরীক্ষা, বিশ্ববিদ্যালয় ভর্তি পরীক্ষা ও বিভিন্ন মন্ত্রণালয়ের নিয়োগ পরীক্ষায় আসা বাংলা বিষয়ের সাধারণ প্রশ্নপত্রের ধরন অনুসরণ করেই বইটি সাজানো হয়েছে।",
+  },
+  {
+    q: "বইটি কীভাবে অর্ডার করব?",
+    a: "ওয়েবসাইটের অর্ডার ফর্মে নাম, ফোন নম্বর ও ঠিকানা দিয়ে অনলাইনে অর্ডার করতে পারেন, অথবা সরাসরি ০১৭৭৮৬৪৬৯৬৮ নম্বরে কল করে অর্ডার করতে পারেন।",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      name: "বাংলা জয়যাত্রা",
+      author: { "@type": "Person", name: "কামরুজজামান সরকার" },
+      inLanguage: "bn",
+      description:
+        "চাকরির জন্য বাংলা প্রস্তুতির বই — বিসিএস প্রিলিমিনারি ও লিখিত, বিজেএস, নন-ক্যাডার, প্রাথমিক শিক্ষক নিয়োগ, শিক্ষক নিবন্ধন, বিশ্ববিদ্যালয় ভর্তি, ব্যাংক ও মন্ত্রণালয় নিয়োগ পরীক্ষার জন্য উপযোগী।",
+      image: "https://banglajoyjatra.com/book-cover.png",
+      url: "https://banglajoyjatra.com",
+      publisher: { "@type": "Organization", name: "বাংলা জয়যাত্রা" },
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "বিসিএস, বিজেএস, নন-ক্যাডার, প্রাথমিক শিক্ষক নিয়োগ, শিক্ষক নিবন্ধন, বিশ্ববিদ্যালয় ভর্তি, ব্যাংক নিয়োগ ও মন্ত্রণালয় নিয়োগ পরীক্ষার্থী",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
 
       <main id="top" className="flex-1">
@@ -36,13 +101,18 @@ export default function Home() {
               <h1 className="text-4xl font-bold leading-[1.15] sm:text-5xl">
                 বাংলা জয়যাত্রা
               </h1>
+              <p className="text-lg font-semibold text-brand-gold sm:text-xl">
+                চাকরির জন্য বাংলা প্রস্তুতির সম্পূর্ণ গাইড
+              </p>
               <p className="max-w-md text-base leading-relaxed text-amber-50/85 sm:text-lg">
                 লিখেছেন{" "}
                 <span className="font-semibold text-brand-gold">
                   কামরুজজামান সরকার
                 </span>
-                , বিসিএস (সাধারণ শিক্ষা), ৩১তম বিসিএস। একটি বই, যা বাংলা ভাষা ও
-                সাহিত্যের গভীরতম দিকগুলো সহজ ও সুশৃঙ্খলভাবে তুলে ধরে।
+                , বিসিএস (সাধারণ শিক্ষা), ৩১তম বিসিএস। বিসিএস প্রিলিমিনারি ও
+                লিখিত পরীক্ষা থেকে শুরু করে ব্যাংক ও শিক্ষক নিয়োগ পরীক্ষা
+                পর্যন্ত — বাংলা ভাষা ও সাহিত্যের গভীরতম দিকগুলো সহজ ও
+                সুশৃঙ্খলভাবে তুলে ধরে এই বই।
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
@@ -166,6 +236,34 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Who is this book for */}
+        <section id="jobs" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <p className="mb-2 text-sm font-semibold tracking-wide text-brand-maroon">
+            কাদের জন্য এই বই
+          </p>
+          <h2 className="mb-4 max-w-2xl text-3xl font-bold text-brand-green-dark">
+            যেসব চাকরির পরীক্ষার বাংলা প্রস্তুতিতে সহায়ক
+          </h2>
+          <p className="mb-8 max-w-2xl text-base leading-relaxed text-foreground/80">
+            “বাংলা জয়যাত্রা” বইটি নির্দিষ্ট কোনো একটি পরীক্ষার জন্য নয় —
+            বাংলাদেশের প্রায় সব ধরনের প্রতিযোগিতামূলক চাকরির পরীক্ষার বাংলা
+            অংশের প্রস্তুতির জন্য উপযোগী করে তৈরি করা হয়েছে।
+          </p>
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+            {examCategories.map((c) => (
+              <li
+                key={c}
+                className="flex items-center gap-3 rounded-xl border border-black/10 bg-zinc-50 px-4 py-3 text-sm font-medium text-foreground/85"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
+                  ✓
+                </span>
+                {c}
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Author */}
         <section id="author" className="bg-zinc-50">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
@@ -198,6 +296,31 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <p className="mb-2 text-sm font-semibold tracking-wide text-brand-maroon">
+            সচরাচর জিজ্ঞাসা
+          </p>
+          <h2 className="mb-8 max-w-2xl text-3xl font-bold text-brand-green-dark">
+            প্রায়শই জিজ্ঞাসিত প্রশ্ন
+          </h2>
+          <div className="max-w-3xl divide-y divide-black/10 rounded-2xl border border-black/10 bg-white">
+            {faqs.map((f) => (
+              <details key={f.q} className="group p-5 sm:p-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-foreground marker:content-none">
+                  {f.q}
+                  <span className="shrink-0 text-brand-gold transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/75">
+                  {f.a}
+                </p>
+              </details>
+            ))}
           </div>
         </section>
 

@@ -16,8 +16,14 @@ export default function SiteHeader() {
           <Link href="/#book" className="hover:text-brand-green">
             বইটি সম্পর্কে
           </Link>
+          <Link href="/#jobs" className="hover:text-brand-green">
+            কাদের জন্য
+          </Link>
           <Link href="/#author" className="hover:text-brand-green">
             লেখক পরিচিতি
+          </Link>
+          <Link href="/#faq" className="hover:text-brand-green">
+            প্রশ্নোত্তর
           </Link>
           <Link href="/#order" className="hover:text-brand-green">
             অর্ডার
