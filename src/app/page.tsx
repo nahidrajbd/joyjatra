@@ -97,14 +97,23 @@ export default function Home() {
 
       <main id="top" className="flex-1">
         {/* Hero */}
-        <section
-          className="relative overflow-hidden text-amber-50"
-          style={{
-            background:
-              "linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 70%)",
-          }}
-        >
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-2 md:py-24">
+        <section className="relative flex min-h-screen items-center overflow-hidden text-amber-50">
+          <Image
+            src="/hero.jpg"
+            alt=""
+            fill
+            priority
+            aria-hidden="true"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(115deg, rgba(7,51,40,0.92) 0%, rgba(7,51,40,0.75) 42%, rgba(7,51,40,0.35) 75%)",
+            }}
+          />
+          <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 py-24 sm:px-8 md:grid-cols-2">
             <div className="order-2 flex flex-col items-start gap-6 md:order-1">
               <span className="rounded-full border border-brand-gold/50 bg-white/5 px-4 py-1 text-xs font-medium tracking-wide text-brand-gold">
                 ৩য় সংস্করণ
