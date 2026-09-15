@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({
@@ -78,7 +79,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="bn" className={`${hindSiliguri.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-bengali">{children}</body>
+      <body className="min-h-full flex flex-col font-bengali">
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }
