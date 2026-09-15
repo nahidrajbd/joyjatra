@@ -96,7 +96,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 py-16 sm:px-8 md:grid-cols-2 md:py-24">
             <div className="order-2 flex flex-col items-start gap-6 md:order-1">
               <span className="rounded-full border border-brand-gold/50 bg-white/5 px-4 py-1 text-xs font-medium tracking-wide text-brand-gold">
-                নতুন প্রকাশিত বই
+                ৩য় সংস্করণ
               </span>
               <h1 className="text-4xl font-bold leading-[1.15] sm:text-5xl">
                 বাংলা জয়যাত্রা
@@ -133,10 +133,10 @@ export default function Home() {
               <Image
                 src="/book-cover.png"
                 alt="বাংলা জয়যাত্রা বইয়ের প্রচ্ছদ"
-                width={500}
-                height={500}
+                width={296}
+                height={433}
                 priority
-                className="w-full max-w-[320px] rounded-sm shadow-2xl"
+                className="w-full max-w-[260px] animate-float sm:max-w-[300px]"
               />
             </div>
           </div>
