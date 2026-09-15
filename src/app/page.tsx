@@ -14,6 +14,17 @@ const highlights = [
   "সাম্প্রতিক তথ্য দ্বারা হালনাগাদকৃত",
 ];
 
+const reasons = [
+  "বর্তমান সময়ে বিসিএস প্রিলিমিনারি পরীক্ষার ব্যতিক্রমী প্রশ্নের উত্তর দেওয়ার জন্য নির্ভরযোগ্য বাংলা বই",
+  "বাংলা একাডেমি প্রণীত প্রমিত বাংলা বানানের নিয়ম অনুযায়ী রচিত",
+  "এনসিটিবি নির্ধারিত নবম-দশম শ্রেণির নতুন ব্যাকরণের সাথে আপডেট",
+  "বাংলা সাহিত্যের ৩০০ জন কবি-সাহিত্যিক সম্পর্কে সমৃদ্ধ ও নির্ভুল তথ্য",
+  "বাংলা ভাষা ও সাহিত্যের সকল টপিকের বিস্তারিত আলোচনা",
+  "একসঙ্গে বিসিএস প্রিলিমিনারি ও লিখিত পরীক্ষার প্রস্তুতি",
+  "বাংলা একাডেমি প্রণীত আধুনিক বাংলা অভিধানের গুরুত্বপূর্ণ ১০০০+ শব্দার্থ",
+  "বিগত ৩০ বছরের চাকরি পরীক্ষার ৮০০০+ বহুনির্বাচনি প্রশ্নসংবলিত",
+];
+
 const examCategories = [
   "বিসিএস প্রিলিমিনারি পরীক্ষা",
   "বিসিএস লিখিত পরীক্ষা",
@@ -233,6 +244,31 @@ export default function Home() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Why read this book */}
+        <section id="why" className="bg-zinc-50">
+          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+            <p className="mb-2 text-sm font-semibold tracking-wide text-brand-maroon">
+              কেন এই বই
+            </p>
+            <h2 className="mb-8 max-w-2xl text-3xl font-bold text-brand-green-dark">
+              বইটি কেন পড়বেন?
+            </h2>
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {reasons.map((r) => (
+                <li
+                  key={r}
+                  className="flex items-start gap-3 rounded-xl border border-black/10 bg-white px-4 py-4 text-sm leading-relaxed text-foreground/85"
+                >
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-gold/15 text-xs text-brand-gold">
+                    ✦
+                  </span>
+                  {r}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
