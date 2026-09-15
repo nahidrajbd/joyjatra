@@ -156,7 +156,7 @@ export default function Home() {
                 width={296}
                 height={433}
                 priority
-                className="w-full max-w-[260px] animate-float sm:max-w-[300px]"
+                className="w-full max-w-[300px] animate-float sm:max-w-[380px] md:max-w-[420px]"
               />
             </div>
           </div>
