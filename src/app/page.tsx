@@ -1,5 +1,7 @@
 import Image from "next/image";
 import OrderForm from "@/components/OrderForm";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 const PHONE = "০১৭৭৮৬৪৬৯৬৮";
 const PHONE_TEL = "+8801778646968";
@@ -15,36 +17,7 @@ const highlights = [
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-background/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
-          <a href="#top" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-green text-sm font-bold text-amber-50">
-              বা
-            </span>
-            <span className="text-lg font-bold text-brand-green-dark">
-              বাংলা জয়যাত্রা
-            </span>
-          </a>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-foreground/80 sm:flex">
-            <a href="#book" className="hover:text-brand-green">
-              বইটি সম্পর্কে
-            </a>
-            <a href="#author" className="hover:text-brand-green">
-              লেখক পরিচিতি
-            </a>
-            <a href="#order" className="hover:text-brand-green">
-              অর্ডার
-            </a>
-          </nav>
-          <a
-            href="#order"
-            className="rounded-full bg-brand-maroon px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-maroon/90 sm:px-5"
-          >
-            অর্ডার করুন
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="top" className="flex-1">
         {/* Hero */}
@@ -276,21 +249,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-black/10 bg-brand-green-dark text-amber-50/80">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-5 py-8 text-center text-sm sm:px-8">
-          <p className="text-lg font-bold text-amber-50">বাংলা জয়যাত্রা</p>
-          <p>লেখক: কামরুজজামান সরকার, বিসিএস (সাধারণ শিক্ষা), ৩১তম বিসিএস</p>
-          <p className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-            <span>{PHONE}</span>
-            <span>{EMAIL}</span>
-            <span>banglajoyjatra.com</span>
-          </p>
-          <p className="mt-2 text-xs text-amber-50/50">
-            © {new Date().getFullYear()} বাংলা জয়যাত্রা। সর্বস্বত্ব সংরক্ষিত।
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
