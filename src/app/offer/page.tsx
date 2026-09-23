@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -29,7 +30,9 @@ export default function OfferPage() {
 
           {/* Form card */}
           <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm sm:p-8">
-            <OfferOrderForm />
+            <Suspense>
+              <OfferOrderForm />
+            </Suspense>
           </div>
         </div>
       </main>
