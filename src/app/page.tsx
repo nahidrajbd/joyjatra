@@ -93,11 +93,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SiteHeader />
-
       <main id="top" className="flex-1">
         {/* Hero */}
         <section className="relative flex min-h-screen items-center overflow-hidden text-amber-50">
+          {/* Header overlaid on hero */}
+          <div className="absolute inset-x-0 top-0 z-50">
+            <SiteHeader />
+          </div>
           <Image
             src="/hero.jpg"
             alt=""
@@ -113,7 +115,7 @@ export default function Home() {
                 "linear-gradient(115deg, rgba(7,51,40,0.92) 0%, rgba(7,51,40,0.75) 42%, rgba(7,51,40,0.35) 75%)",
             }}
           />
-          <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 py-24 sm:px-8 md:grid-cols-2">
+          <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 pb-24 pt-36 sm:px-8 md:grid-cols-2">
             <div className="order-2 flex flex-col items-start gap-6 md:order-1">
               <span className="rounded-full border border-brand-gold/50 bg-white/5 px-4 py-1 text-xs font-medium tracking-wide text-brand-gold">
                 ৩য় সংস্করণ
@@ -140,6 +142,13 @@ export default function Home() {
                   className="rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-green-dark shadow-lg transition hover:brightness-95"
                 >
                   এখনই অর্ডার করুন
+                </a>
+                <a
+                  href="/offer"
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-gold/60 bg-brand-gold/10 px-6 py-3 text-sm font-semibold text-brand-gold transition hover:bg-brand-gold/20"
+                >
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-gold" />
+                  বিশেষ অফার
                 </a>
                 <a
                   href="#book"
