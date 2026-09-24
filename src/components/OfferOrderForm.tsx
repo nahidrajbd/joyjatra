@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
 export default function OfferOrderForm() {
@@ -27,15 +28,88 @@ export default function OfferOrderForm() {
   }
 
   return (
-    <form
-      action="https://formsubmit.co/mksarker2020@gmail.com"
-      method="POST"
-      className="space-y-5"
-    >
-      <input type="hidden" name="_next" value="https://banglajoyjatra.com/offer?submitted=1" />
-      <input type="hidden" name="_subject" value="নতুন অর্ডার — ওয়েবসাইট স্পেশাল অফার" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="table" />
+    <div>
+      {/* Price & Book details */}
+      <div className="mb-6 overflow-hidden rounded-xl border border-brand-gold/30 bg-gradient-to-br from-amber-50/80 via-white to-amber-50/40 p-4 sm:p-5 shadow-sm">
+        <div className="flex items-center gap-3.5 border-b border-amber-200/60 pb-3.5">
+          <div className="relative h-16 w-12 flex-shrink-0 overflow-hidden rounded-md border border-black/5 shadow-sm">
+            <Image
+              src="/book-cover.png"
+              alt="বাংলা জয়যাত্রা বইয়ের প্রচ্ছদ"
+              fill
+              className="object-cover"
+              sizes="48px"
+            />
+          </div>
+          <div>
+            <h2 className="text-base font-bold text-foreground sm:text-lg">
+              বাংলা জয়যাত্রা
+            </h2>
+            <p className="text-xs text-foreground/60">
+              কামরুজজামান সরকার • বিসিএস ও চাকরির প্রস্তুতি
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-3.5 space-y-2.5 text-sm">
+          <div className="flex items-center justify-between text-foreground/70">
+            <span className="font-medium">কভার মূল্য:</span>
+            <span className="font-semibold text-foreground/50 line-through">
+              ৭৯০ টাকা
+            </span>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-brand-green-dark">
+                বিক্রয়মূল্য :
+              </span>
+              <span className="rounded-full bg-brand-maroon/10 px-2 py-0.5 text-xs font-bold text-brand-maroon">
+                ২৪০ টাকা ছাড়
+              </span>
+            </div>
+            <span className="text-2xl font-black text-brand-maroon">
+              ৫৫০ টাকা
+            </span>
+          </div>
+
+          <div className="flex items-center justify-between border-t border-amber-200/60 pt-2.5">
+            <span className="font-medium text-foreground/80">
+              ডেলিভারি চার্জ:
+            </span>
+            <span className="font-bold text-emerald-700">
+              ফ্রি{" "}
+              <span className="text-xs font-normal text-foreground/60">
+                (সিমিত সময়ের জন্য)
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <form
+        action="https://formsubmit.co/mksarker2020@gmail.com"
+        method="POST"
+        className="space-y-5"
+      >
+        <input
+          type="hidden"
+          name="_next"
+          value="https://banglajoyjatra.com/offer?submitted=1"
+        />
+        <input
+          type="hidden"
+          name="_subject"
+          value="নতুন অর্ডার — ওয়েবসাইট স্পেশাল অফার"
+        />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="বইয়ের নাম" value="বাংলা জয়যাত্রা" />
+        <input
+          type="hidden"
+          name="মূল্য বিবরণ"
+          value="বিক্রয়মূল্য : ৫৫০ টাকা (কভার মূল্য: ৭৯০ টাকা, ডেলিভারি চার্জ: ফ্রি)"
+        />
 
       <div>
         <label
@@ -101,5 +175,6 @@ export default function OfferOrderForm() {
         অর্ডার নিশ্চিত করতে আমরা আপনার ফোন নম্বরে যোগাযোগ করব।
       </p>
     </form>
+  </div>
   );
 }

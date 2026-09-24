@@ -40,6 +40,13 @@ export const metadata: Metadata = {
     "banglajoyjatra",
   ],
   authors: [{ name: "কামরুজজামান সরকার" }],
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   alternates: {
     canonical: SITE_URL,
   },
